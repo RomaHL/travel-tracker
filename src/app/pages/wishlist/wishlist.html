@@ -1,0 +1,25 @@
+<section class="head">
+  <h1 class="title">Your wishlist</h1>
+  <p class="subtitle">
+    {{ count() }} {{ count() === 1 ? 'place' : 'places' }} saved for your travels.
+  </p>
+
+  @if (count() > 0) {
+    <input
+      class="field"
+      type="text"
+      placeholder="Search your saved places"
+      [value]="query()"
+      (input)="query.set($any($event.target).value)"
+    />
+  }
+</section>
+
+<app-place-list
+  [places]="filtered()"
+  [emptyMessage]="
+    query()
+      ? 'No saved places match your search.'
+      : 'Your wishlist is empty. Discover places and tap the star to save them.'
+  "
+/>

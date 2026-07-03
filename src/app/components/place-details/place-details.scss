@@ -1,0 +1,240 @@
+@use 'variables' as *;
+
+:host {
+  display: contents;
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: $color-backdrop;
+}
+
+.panel {
+  position: relative;
+  margin: auto;
+  width: 100%;
+  max-width: 560px;
+  background-color: $color-surface;
+  border-radius: $radius-md;
+  overflow: hidden;
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background-color: $color-surface;
+  color: $color-text;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  background-color: $color-surface-alt;
+}
+
+.media {
+  position: relative;
+  height: 220px;
+  background-color: $color-on-accent;
+}
+
+.media-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.media-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 64px;
+}
+
+.media-icon {
+  width: 88px;
+  height: 88px;
+  object-fit: contain;
+}
+
+.rating {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  padding: 4px 12px;
+  border-radius: 6px;
+  background-color: $color-primary;
+  color: $color-on-primary;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.content {
+  padding: 20px 22px 24px;
+}
+
+.name {
+  margin: 0 0 6px;
+  font-size: 22px;
+  font-weight: 800;
+  color: $color-text;
+}
+
+.category {
+  margin: 0 0 18px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: $color-text-muted;
+}
+
+.category-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.facts {
+  margin: 0 0 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fact {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.fact dt {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: $color-text-muted;
+}
+
+.fact dd {
+  margin: 0;
+  font-size: 15px;
+  color: $color-text;
+}
+
+.fact dd a {
+  color: $color-primary;
+  word-break: break-all;
+}
+
+.description {
+  margin: 0 0 18px;
+  font-size: 15px;
+  color: $color-text;
+}
+
+.loading {
+  margin: 0 0 16px;
+  font-size: 14px;
+  color: $color-text-muted;
+}
+
+.section {
+  margin-bottom: 18px;
+}
+
+.section-title {
+  margin: 0 0 10px;
+  font-size: 15px;
+  font-weight: 700;
+  color: $color-text;
+}
+
+.gallery {
+  display: flex;
+  gap: $gap-sm;
+  overflow-x: auto;
+}
+
+.gallery-img {
+  width: 180px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: $radius-sm;
+  flex: 0 0 auto;
+}
+
+.tips {
+  margin: 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tip {
+  font-size: 14px;
+  color: $color-text;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $gap-md;
+  margin-top: 4px;
+}
+
+.btn {
+  height: $control-height;
+  padding: 0 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: $radius-sm;
+  border: 1px solid $color-border;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn.save {
+  background-color: $color-surface;
+  color: $color-text;
+}
+
+.btn.save:hover {
+  background-color: $color-surface-alt;
+}
+
+.btn.save.saved {
+  background-color: $color-accent;
+  border-color: $color-accent;
+  color: $color-on-accent;
+}
+
+.btn.map {
+  background-color: $color-primary;
+  border-color: $color-primary;
+  color: $color-on-primary;
+}
+
+.btn.map:hover {
+  background-color: $color-primary-dark;
+}

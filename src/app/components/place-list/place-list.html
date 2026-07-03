@@ -1,0 +1,11 @@
+@if (loading()) {
+  <div class="state">Loading places…</div>
+} @else if (places().length === 0) {
+  <div class="state">{{ emptyMessage() }}</div>
+} @else {
+  <div class="grid">
+    @for (place of places(); track place.id) {
+      <app-place-card [place]="place" />
+    }
+  </div>
+}

@@ -1,0 +1,40 @@
+<article class="card">
+  <button class="cover" type="button" (click)="openDetails()">
+    @if (cover(); as image) {
+      <img class="cover-img" [src]="image" [alt]="place().name" loading="lazy" />
+    } @else if (place().categoryIcon.startsWith('http')) {
+      <div class="cover-fallback">
+        <img class="cover-icon" [src]="place().categoryIcon" [alt]="place().category" />
+      </div>
+    } @else {
+      <div class="cover-fallback">📍</div>
+    }
+
+    @if (place().rating !== null) {
+      <span class="rating">{{ place().rating }}</span>
+    }
+  </button>
+
+  <button
+    class="save-btn"
+    type="button"
+    [class.saved]="isSaved()"
+    [attr.aria-pressed]="isSaved()"
+    [attr.aria-label]="isSaved() ? 'Remove from wishlist' : 'Add to wishlist'"
+    (click)="toggleSaved()"
+  >
+    {{ isSaved() ? '★' : '☆' }}
+  </button>
+
+  <div class="body">
+    <h3 class="name">{{ place().name }}</h3>
+
+    <p class="category">
+      {{ place().category }}
+    </p>
+
+    <p class="address">{{ place().address }}</p>
+
+    <button class="details-btn" type="button" (click)="openDetails()">View details</button>
+  </div>
+</article>

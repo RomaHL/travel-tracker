@@ -1,0 +1,44 @@
+<section class="hero">
+  <h1 class="title">Find your next destination</h1>
+  <p class="subtitle">
+    Search popular spots by keyword and location, then save the ones you love to your wishlist.
+  </p>
+
+  <form class="search" (submit)="onSearch(); $event.preventDefault()">
+    <input
+      class="field"
+      type="text"
+      placeholder="Keyword (e.g. museum, coffee)"
+      [value]="keyword()"
+      (input)="keyword.set($any($event.target).value)"
+    />
+    <input
+      class="field"
+      type="text"
+      placeholder="Location (e.g. New York)"
+      [value]="location()"
+      (input)="location.set($any($event.target).value)"
+    />
+    <button class="btn primary" type="submit">Search</button>
+  </form>
+</section>
+
+<section class="results">
+  <h2 class="results-title">
+    @if (activeKeyword()) {
+      Results for “{{ activeKeyword() }}”
+    } @else {
+      Top popular places
+    }
+  </h2>
+
+  @if (error()) {
+    <p class="error">{{ error() }}</p>
+  }
+
+  <app-place-list
+    [places]="items()"
+    [loading]="loading()"
+    emptyMessage="No places found. Try a different keyword or location."
+  />
+</section>

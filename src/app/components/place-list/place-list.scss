@@ -1,0 +1,21 @@
+@use 'variables' as *;
+
+:host {
+  display: block;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: $gap-lg;
+}
+
+.state {
+  padding: 48px 24px;
+  text-align: center;
+  color: $color-text-muted;
+  background-color: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  font-size: 15px;
+}

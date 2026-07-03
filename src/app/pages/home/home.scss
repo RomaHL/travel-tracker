@@ -1,0 +1,81 @@
+@use 'variables' as *;
+
+:host {
+  display: block;
+}
+
+.hero {
+  margin-bottom: 32px;
+}
+
+.title {
+  margin: 0 0 8px;
+  font-size: 30px;
+  font-weight: 800;
+  color: $color-text;
+}
+
+.subtitle {
+  margin: 0 0 20px;
+  max-width: 560px;
+  color: $color-text-muted;
+  font-size: 15px;
+}
+
+.search {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $gap-md;
+}
+
+.field {
+  flex: 1 1 220px;
+  height: $control-height;
+  padding: 0 14px;
+  border: 1px solid $color-border;
+  border-radius: $radius-sm;
+  background-color: $color-surface;
+  color: $color-text;
+  font-size: 15px;
+}
+
+.field:focus {
+  outline: 2px solid $color-primary;
+  outline-offset: -1px;
+}
+
+.btn {
+  height: $control-height;
+  padding: 0 20px;
+  border-radius: $radius-sm;
+  border: 1px solid $color-border;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background-color: $color-primary;
+  border-color: $color-primary;
+  color: $color-on-primary;
+}
+
+.btn.primary:hover {
+  background-color: $color-primary-dark;
+}
+
+.results-title {
+  margin: 0 0 20px;
+  font-size: 20px;
+  font-weight: 700;
+  color: $color-text;
+}
+
+.error {
+  margin: 0 0 16px;
+  padding: 12px 16px;
+  border-radius: $radius-sm;
+  background-color: $color-danger;
+  color: $color-on-primary;
+  font-size: 14px;
+}
